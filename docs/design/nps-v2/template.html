@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <!-- 原型只读取本目录的图标库，不向网络发送请求或提交表单。 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>NPS V2 · 桌面端与 Web 端交互原型</title>
+    <style>
+      /* 外层只负责页面宽度与主题；产品界面样式保留在原型源文件中。 */
+      :root { color-scheme: light dark; background: light-dark(#ffffff, #17181c); }
+      body { max-width: 1280px; margin: 0 auto; padding: 16px; }
+    </style>
+    <!-- 本地固定版本：离线打开也能显示图标，保留第三方原始许可证。 -->
+    <script src="vendor/lucide.min.js"></script>
+  </head>
+  <body>
+    <!-- 本文件为导出模板；请编辑 prototype.fragment.html，然后运行 python build.py。 -->
+    <!-- NPS_V2_FRAGMENT -->
+  </body>
+</html>

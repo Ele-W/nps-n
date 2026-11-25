@@ -1,0 +1,12 @@
+{
+  "name": "nps-v2-design-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NPS V2 桌面端、Web 控制台与平台管理端交互原型",
+  "scripts": {
+    "verify": "node verify.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

@@ -1,0 +1,4 @@
+# 预览无需安装依赖；这些目录只用于可选的浏览器验证。
+node_modules/
+.verification/
+__pycache__/

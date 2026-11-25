@@ -1,0 +1,380 @@
+<div id="nps-v2-design">
+  <!-- 这里只切换设计稿视图，不代表正式产品允许用户切换为管理员。 -->
+  <div class="np-previewbar">
+    <div class="np-previewtabs" role="group" aria-label="查看两端设计">
+      <button type="button" data-surface="desktop" aria-pressed="true"><i data-lucide="monitor" aria-hidden="true"></i>桌面客户端</button>
+      <button type="button" data-surface="web" aria-pressed="false"><i data-lucide="panels-top-left" aria-hidden="true"></i>Web 控制台</button>
+      <button type="button" data-surface="admin" aria-pressed="false"><i data-lucide="users-round" aria-hidden="true"></i>平台管理</button>
+    </div>
+    <span class="np-previewnote">交互原型 · 示例数据</span>
+  </div>
+  <section class="np-app np-desktop" aria-label="NPS 桌面端设计">
+    <!-- Windows/macOS 共用信息结构，窗口装饰随示例账户切换。 -->
+    <header class="np-titlebar"><span class="np-maclights" aria-hidden="true"><span></span><span></span><span></span></span><span class="np-appmark">n<span>↗</span></span><span>NPS Connect</span><span class="np-titleextra">个人连接工作台</span><div class="np-window" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div></header>
+    <div class="np-shell">
+      <aside class="np-sidebar">
+        <label class="np-accountlabel"><span class="np-avatar">林</span><select class="np-account" aria-label="切换示例账户"><option value="lin">林川 · 个人账户</option><option value="chen">陈默 · 个人账户</option></select></label>
+        <span class="np-navlabel">工作空间</span>
+        <nav class="np-nav" aria-label="桌面导航">
+          <button type="button" data-nav="overview" class="np-selected"><i data-lucide="layout-dashboard" aria-hidden="true"></i>连接概览</button>
+          <button type="button" data-nav="tunnels"><i data-lucide="waypoints" aria-hidden="true"></i>我的隧道<span class="np-navcount"></span></button>
+          <button type="button" data-nav="logs"><i data-lucide="activity" aria-hidden="true"></i>诊断与日志</button>
+          <button type="button" data-nav="settings"><i data-lucide="settings-2" aria-hidden="true"></i>偏好设置</button>
+        </nav>
+        <div class="np-sidebarbottom"><span class="np-serverdot"></span><span>我的服务器<small>edge.example.com</small></span><button type="button" data-action="server" aria-label="查看服务器连接信息"><i data-lucide="chevrons-up-down" aria-hidden="true"></i></button></div>
+      </aside>
+      <div class="np-main">
+        <div class="np-mainhead"><div><div class="np-eyebrow">我的工作空间 <span>/</span> 当前设备</div><h2 class="np-pagetitle">连接概览</h2></div><button class="np-button np-primary" type="button" data-action="new"><i data-lucide="plus" aria-hidden="true"></i>新建隧道</button></div>
+        <div class="np-body"></div>
+        <footer class="np-footer"><span><span class="np-statusdot"></span><span class="np-footerstate">后台服务运行中</span></span><span>关闭窗口后保持连接 <i data-lucide="shield-check" aria-hidden="true"></i></span></footer>
+      </div>
+    </div>
+  </section>
+  <section class="np-app np-web" aria-label="NPS Web 端设计" hidden>
+    <!-- 用户控制台只呈现当前示例账户的设备与隧道。 -->
+    <div class="np-shell">
+      <aside class="np-sidebar">
+        <div class="np-brand"><span class="np-appmark">n<span>↗</span></span><strong>NPS<span>控制台</span></strong></div>
+        <label class="np-accountlabel"><span class="np-avatar">林</span><select class="np-account" aria-label="切换示例账户"><option value="lin">林川 · 个人账户</option><option value="chen">陈默 · 个人账户</option></select></label>
+        <span class="np-navlabel">工作空间</span>
+        <nav class="np-nav" aria-label="Web 导航">
+          <button type="button" data-nav="overview"><i data-lucide="layout-dashboard" aria-hidden="true"></i>概览</button>
+          <button type="button" data-nav="tunnels" class="np-selected"><i data-lucide="waypoints" aria-hidden="true"></i>隧道<span class="np-navcount"></span></button>
+          <button type="button" data-nav="devices"><i data-lucide="monitor" aria-hidden="true"></i>设备</button>
+          <button type="button" data-nav="usage"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i>用量</button>
+          <button type="button" data-nav="logs"><i data-lucide="list-checks" aria-hidden="true"></i>活动记录</button>
+        </nav>
+        <span class="np-navlabel">账户</span>
+        <nav class="np-nav" aria-label="账户导航"><button type="button" data-nav="settings"><i data-lucide="shield" aria-hidden="true"></i>账户安全</button></nav>
+        <div class="np-sidebarbottom"><span class="np-serverdot"></span><span>服务运行正常<small>个人空间 · 独立资源</small></span></div>
+      </aside>
+      <div class="np-main">
+        <header class="np-webtop"><span>工作空间 <span class="np-muted">/</span> <span class="np-breadcrumb">隧道</span></span><span class="np-webtopright"><span class="np-badge np-neutral">个人版</span><span class="np-avatar np-smallavatar">林</span></span></header>
+        <div class="np-mainhead"><div><div class="np-eyebrow">管理连接与公开入口</div><h2 class="np-pagetitle">隧道</h2><p class="np-pagesub">把本地服务连接到外部，配置与运行状态一目了然。</p></div><button class="np-button np-primary" type="button" data-action="new"><i data-lucide="plus" aria-hidden="true"></i>新建隧道</button></div>
+        <div class="np-body"></div>
+        <footer class="np-footer"><span>仅显示当前账户资源</span><span>配置保存与生效分别跟踪</span></footer>
+      </div>
+    </div>
+  </section>
+  <section class="np-app np-admin" aria-label="NPS 平台管理端设计" hidden>
+    <!-- 管理视图只演示状态与配额，不展示用户连接目标或密钥。 -->
+    <div class="np-shell">
+      <aside class="np-sidebar">
+        <div class="np-brand"><span class="np-appmark">n<span>↗</span></span><strong>NPS<span>管理</span></strong></div>
+        <div class="np-adminidentity"><i data-lucide="shield-check" aria-hidden="true"></i>平台管理员</div>
+        <span class="np-navlabel">平台管理</span>
+        <nav class="np-nav" aria-label="平台管理导航">
+          <button type="button" data-nav="users" class="np-selected"><i data-lucide="users-round" aria-hidden="true"></i>用户管理</button>
+          <button type="button" data-nav="policies"><i data-lucide="fence" aria-hidden="true"></i>入口策略</button>
+          <button type="button" data-nav="system"><i data-lucide="server" aria-hidden="true"></i>服务状态</button>
+        </nav>
+        <div class="np-sidebarbottom"><i data-lucide="lock-keyhole" aria-hidden="true"></i><span>独立管理入口<small>默认不读取用户配置</small></span></div>
+      </aside>
+      <div class="np-main">
+        <header class="np-webtop"><span>平台管理 <span class="np-muted">/</span> <span class="np-breadcrumb">用户管理</span></span><span class="np-badge np-warn">管理员视图</span></header>
+        <div class="np-mainhead"><div><div class="np-eyebrow">账户状态与资源配额</div><h2 class="np-pagetitle">用户管理</h2><p class="np-pagesub">管理账户状态和额度，用户配置保持独立。</p></div></div>
+        <div class="np-body"></div>
+        <footer class="np-footer"><span>管理操作记录审计</span><span>不展示用户目标地址与密钥</span></footer>
+      </div>
+    </div>
+  </section>
+  <div class="np-toast" role="status" aria-live="polite" hidden></div>
+</div>
+<style>
+  /* 主题变量统一管理浅深色；下方布局与控件均限定在原型根节点内。 */
+  #nps-v2-design { --np-bg:light-dark(#ffffff,#17181c); --np-soft:light-dark(#f7f8fa,#1d1f25); --np-side:light-dark(#f4f5f7,#14151a); --np-text:light-dark(#20242e,#ededf1); --np-muted:light-dark(#687080,#a5aabb); --np-line:light-dark(#e6e8ee,#30323b); --np-accent:light-dark(#5356db,#9295ff); --np-accenttext:light-dark(#ffffff,#15152b); --np-accentsoft:light-dark(#eeeffe,#282943); --np-good:light-dark(#158162,#68d9af); --np-goodbg:light-dark(#ecf9f2,#173329); --np-warn:light-dark(#9b680a,#edc274); --np-warnbg:light-dark(#fff7e7,#382f20); --np-bad:light-dark(#b54747,#ff9c9c); --np-badbg:light-dark(#fff0f0,#382326); font:14px/1.55 "Segoe UI Variable","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; color:var(--np-text); position:relative; }
+  #nps-v2-design * { box-sizing:border-box; }
+  #nps-v2-design [hidden] { display:none !important; }
+  #nps-v2-design button,#nps-v2-design input,#nps-v2-design select { font:inherit; }
+  #nps-v2-design button { cursor:var(--cursor-interaction,pointer); }
+  #nps-v2-design button:disabled { cursor:default; opacity:.5; }
+  #nps-v2-design button:focus-visible,#nps-v2-design input:focus-visible,#nps-v2-design select:focus-visible { outline:2px solid var(--np-accent); outline-offset:3px; }
+  #nps-v2-design h2,#nps-v2-design h3,#nps-v2-design h4,#nps-v2-design p { margin:0; }
+  #nps-v2-design svg,#nps-v2-design i[data-lucide] { width:16px; height:16px; flex-shrink:0; display:inline-block; vertical-align:middle; }
+  #nps-v2-design .np-previewbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; padding-right:94px; flex-wrap:wrap; }
+  #nps-v2-design .np-previewtabs { display:flex; gap:4px; padding:4px; background:var(--np-soft); border-radius:10px; }
+  #nps-v2-design .np-previewtabs button { border:0; background:transparent; color:var(--np-muted); padding:8px 13px; border-radius:7px; display:flex; align-items:center; gap:8px; }
+  #nps-v2-design .np-previewtabs button[aria-pressed="true"] { background:var(--np-bg); color:var(--np-text); box-shadow:0 1px 4px #0000000c; }
+  #nps-v2-design .np-previewnote { font-size:12px; color:var(--np-muted); }
+  #nps-v2-design .np-app { border:1px solid var(--np-line); border-radius:13px; overflow:hidden; background:var(--np-bg); }
+  #nps-v2-design .np-titlebar { display:flex; gap:10px; align-items:center; height:45px; border-bottom:1px solid var(--np-line); background:var(--np-soft); padding:0 14px; font-size:12px; }
+  #nps-v2-design .np-appmark { width:29px; height:29px; background:var(--np-accent); color:var(--np-accenttext); display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:22px; font-weight:600; line-height:1; }
+  #nps-v2-design .np-appmark span { font-size:14px; margin-left:-1px; margin-top:-7px; }
+  #nps-v2-design .np-titlebar .np-appmark { width:23px; height:23px; font-size:19px; border-radius:6px; }
+  #nps-v2-design .np-titleextra { color:var(--np-muted); }
+  #nps-v2-design .np-window { display:flex; gap:25px; margin-left:auto; color:var(--np-muted); }
+  #nps-v2-design .np-maclights { display:none; gap:7px; margin-right:10px; }
+  #nps-v2-design .np-maclights > span { width:10px; height:10px; border-radius:50%; background:light-dark(#ee746d,#e17670); }
+  #nps-v2-design .np-maclights > span:nth-child(2) { background:light-dark(#e8bf59,#c9a64e); }
+  #nps-v2-design .np-maclights > span:nth-child(3) { background:light-dark(#68bd83,#62a978); }
+  #nps-v2-design .np-mac .np-maclights { display:flex; }
+  #nps-v2-design .np-mac .np-window { display:none; }
+  #nps-v2-design .np-shell { display:grid; grid-template-columns:182px minmax(0,1fr); min-height:610px; }
+  #nps-v2-design .np-sidebar { background:var(--np-side); border-right:1px solid var(--np-line); padding:20px 12px 14px; display:flex; flex-direction:column; gap:8px; min-width:0; }
+  #nps-v2-design .np-brand { display:flex; align-items:center; gap:10px; padding:0 8px 16px; }
+  #nps-v2-design .np-brand strong { font-size:19px; font-weight:600; }
+  #nps-v2-design .np-brand strong span { font-weight:400; font-size:12px; color:var(--np-muted); margin-left:8px; }
+  #nps-v2-design .np-accountlabel { display:flex; gap:7px; align-items:center; padding:7px; margin-bottom:16px; border:1px solid var(--np-line); border-radius:8px; background:var(--np-bg); }
+  #nps-v2-design .np-avatar { width:27px; height:27px; border-radius:7px; background:var(--np-accentsoft); color:var(--np-accent); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; font-size:12px; }
+  #nps-v2-design .np-smallavatar { width:25px; height:25px; }
+  #nps-v2-design .np-account { width:100%; min-width:0; border:0; color:var(--np-text); background:var(--np-bg); font-size:12px; padding:2px 0; }
+  #nps-v2-design .np-navlabel { color:var(--np-muted); font-size:11px; letter-spacing:.07em; margin:0 10px 2px; }
+  #nps-v2-design .np-nav { display:flex; flex-direction:column; gap:3px; margin-bottom:16px; }
+  #nps-v2-design .np-nav button { background:transparent; border:0; color:var(--np-muted); padding:10px; display:flex; gap:9px; align-items:center; border-radius:7px; text-align:left; font-size:13px; white-space:nowrap; }
+  #nps-v2-design .np-nav button:hover { background:var(--np-bg); color:var(--np-text); }
+  #nps-v2-design .np-nav button.np-selected { background:var(--np-accentsoft); color:var(--np-accent); font-weight:500; }
+  #nps-v2-design .np-navcount { margin-left:auto; font-size:11px; opacity:.8; }
+  #nps-v2-design .np-sidebarbottom { margin-top:auto; border-top:1px solid var(--np-line); padding:15px 6px 0; display:flex; gap:8px; align-items:center; font-size:12px; }
+  #nps-v2-design .np-sidebarbottom small { display:block; font-size:11px; color:var(--np-muted); }
+  #nps-v2-design .np-sidebarbottom button { margin-left:auto; border:0; background:transparent; color:var(--np-muted); padding:3px; }
+  #nps-v2-design .np-serverdot,#nps-v2-design .np-statusdot { width:7px; height:7px; border-radius:50%; background:var(--np-good); display:inline-block; flex-shrink:0; }
+  #nps-v2-design .np-main { min-width:0; display:flex; flex-direction:column; }
+  #nps-v2-design .np-mainhead { display:flex; justify-content:space-between; align-items:center; padding:26px 28px 22px; gap:12px; }
+  #nps-v2-design .np-eyebrow { color:var(--np-muted); font-size:11px; margin-bottom:5px; }
+  #nps-v2-design .np-eyebrow span { padding:0 5px; }
+  #nps-v2-design .np-pagetitle { font-size:23px; font-weight:600; letter-spacing:-.04em; }
+  #nps-v2-design .np-pagesub { color:var(--np-muted); font-size:12px; padding-top:6px; }
+  #nps-v2-design .np-button { display:inline-flex; gap:6px; align-items:center; justify-content:center; padding:7px 11px; min-height:35px; border:1px solid var(--np-line); border-radius:7px; background:var(--np-bg); color:var(--np-text); font-size:12px; white-space:nowrap; }
+  #nps-v2-design .np-button:hover { background:var(--np-soft); }
+  #nps-v2-design .np-primary { background:var(--np-accent); border-color:var(--np-accent); color:var(--np-accenttext); }
+  #nps-v2-design .np-primary:hover { background:var(--np-accent); filter:brightness(.96); }
+  #nps-v2-design .np-ghost { background:transparent; border-color:transparent; color:var(--np-muted); }
+  #nps-v2-design .np-body { padding:0 28px 24px; flex:1; min-width:0; }
+  #nps-v2-design .np-connection { background:var(--np-soft); border:1px solid var(--np-line); border-radius:10px; padding:22px; margin-bottom:24px; }
+  #nps-v2-design .np-connectiontop { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  #nps-v2-design .np-deviceicon { width:44px; height:44px; background:var(--np-bg); border:1px solid var(--np-line); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--np-accent); }
+  #nps-v2-design .np-deviceicon svg { width:23px; height:23px; }
+  #nps-v2-design .np-connection h3 { font-size:17px; font-weight:600; }
+  #nps-v2-design .np-connection p { font-size:12px; color:var(--np-muted); margin-top:3px; }
+  #nps-v2-design .np-connectiontop > .np-badge { margin-left:auto; }
+  #nps-v2-design .np-connectionbottom { margin-top:19px; padding-top:15px; border-top:1px solid var(--np-line); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  #nps-v2-design .np-connectionmeta { display:flex; gap:24px; flex-wrap:wrap; font-size:12px; }
+  #nps-v2-design .np-connectionmeta span small { display:block; color:var(--np-muted); font-size:11px; margin-bottom:2px; }
+  #nps-v2-design .np-badge { padding:3px 7px; font-size:11px; display:inline-flex; align-items:center; gap:5px; border-radius:5px; white-space:nowrap; width:fit-content; }
+  #nps-v2-design .np-good { color:var(--np-good); background:var(--np-goodbg); }
+  #nps-v2-design .np-warn { color:var(--np-warn); background:var(--np-warnbg); }
+  #nps-v2-design .np-neutral { color:var(--np-muted); background:var(--np-soft); }
+  #nps-v2-design .np-sectionhead { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:13px; }
+  #nps-v2-design .np-sectionhead h3 { font-size:14px; font-weight:600; }
+  #nps-v2-design .np-sectionhead span { color:var(--np-muted); font-size:12px; }
+  #nps-v2-design .np-row { display:flex; gap:12px; padding:14px 0; align-items:center; border-bottom:1px solid var(--np-line); }
+  #nps-v2-design .np-protocol { width:36px; height:36px; border-radius:8px; border:1px solid var(--np-line); color:var(--np-muted); background:var(--np-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:500; }
+  #nps-v2-design .np-rowname { flex:1; min-width:0; }
+  #nps-v2-design .np-rowname strong { font-size:13px; display:block; font-weight:500; }
+  #nps-v2-design .np-rowname small { color:var(--np-muted); font-size:11px; overflow-wrap:anywhere; }
+  #nps-v2-design .np-iconbutton { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:0; border-radius:6px; background:transparent; color:var(--np-muted); flex-shrink:0; }
+  #nps-v2-design .np-iconbutton:hover { color:var(--np-accent); background:var(--np-accentsoft); }
+  #nps-v2-design .np-hint { margin-top:17px; color:var(--np-muted); font-size:12px; display:flex; gap:8px; align-items:flex-start; }
+  #nps-v2-design .np-footer { padding:11px 22px; border-top:1px solid var(--np-line); display:flex; justify-content:space-between; gap:10px; color:var(--np-muted); font-size:11px; }
+  #nps-v2-design .np-footer > span { display:flex; align-items:center; gap:6px; }
+  #nps-v2-design .np-footer svg { width:13px; height:13px; }
+  #nps-v2-design .np-webtop { padding:16px 27px; border-bottom:1px solid var(--np-line); display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:12px; }
+  #nps-v2-design .np-webtopright { display:flex; align-items:center; gap:12px; }
+  #nps-v2-design .np-muted { color:var(--np-muted); }
+  #nps-v2-design .np-stats { display:flex; gap:30px; border-bottom:1px solid var(--np-line); padding-bottom:20px; margin-bottom:20px; flex-wrap:wrap; }
+  #nps-v2-design .np-stat { display:flex; align-items:baseline; gap:9px; font-size:12px; color:var(--np-muted); }
+  #nps-v2-design .np-stat strong { font-size:24px; font-weight:500; color:var(--np-text); font-variant-numeric:tabular-nums; }
+  #nps-v2-design .np-tools { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:15px; }
+  #nps-v2-design .np-search { display:flex; align-items:center; gap:7px; border:1px solid var(--np-line); border-radius:7px; padding:7px 10px; color:var(--np-muted); background:var(--np-bg); min-width:0; }
+  #nps-v2-design .np-search input { background:transparent; border:0; color:var(--np-text); width:170px; min-width:0; font-size:12px; }
+  #nps-v2-design .np-select { border:1px solid var(--np-line); padding:7px 10px; color:var(--np-text); border-radius:7px; background:var(--np-bg); font-size:12px; }
+  #nps-v2-design .np-table { width:100%; border-collapse:collapse; font-size:12px; }
+  #nps-v2-design .np-table th { font-size:11px; color:var(--np-muted); text-align:left; font-weight:400; padding:10px 8px; background:var(--np-soft); }
+  #nps-v2-design .np-table td { border-bottom:1px solid var(--np-line); padding:15px 8px; vertical-align:middle; }
+  #nps-v2-design .np-table th:first-child { border-radius:6px 0 0 6px; }
+  #nps-v2-design .np-table th:last-child { border-radius:0 6px 6px 0; }
+  #nps-v2-design .np-table .np-tableactions { text-align:right; white-space:nowrap; }
+  #nps-v2-design .np-tabletitle { color:var(--np-text); border:0; background:transparent; padding:0; font-size:12px; font-weight:500; text-align:left; }
+  #nps-v2-design .np-tabletitle:hover { color:var(--np-accent); text-decoration:underline; }
+  #nps-v2-design .np-tablesub { display:block; color:var(--np-muted); font-size:11px; margin-top:3px; overflow-wrap:anywhere; }
+  #nps-v2-design .np-endpoint { font-family:"SFMono-Regular",Consolas,monospace; font-size:11px; overflow-wrap:anywhere; }
+  #nps-v2-design .np-countline { color:var(--np-muted); font-size:11px; margin-top:14px; }
+  #nps-v2-design .np-empty { padding:40px 12px; text-align:center; color:var(--np-muted); }
+  #nps-v2-design .np-panel { margin-top:20px; padding:20px; border:1px solid var(--np-line); border-radius:10px; background:var(--np-soft); }
+  #nps-v2-design .np-panelhead { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:17px; }
+  #nps-v2-design .np-panelhead h3 { font-size:16px; font-weight:600; }
+  #nps-v2-design .np-panelhead p { font-size:12px; color:var(--np-muted); margin-top:4px; }
+  #nps-v2-design .np-steps { display:flex; gap:18px; margin-bottom:22px; flex-wrap:wrap; }
+  #nps-v2-design .np-step { font-size:11px; color:var(--np-muted); display:flex; align-items:center; gap:6px; }
+  #nps-v2-design .np-step b { width:21px; height:21px; border-radius:50%; background:var(--np-bg); border:1px solid var(--np-line); display:flex; align-items:center; justify-content:center; font-weight:400; }
+  #nps-v2-design .np-step.np-current { color:var(--np-accent); }
+  #nps-v2-design .np-current b { background:var(--np-accent); color:var(--np-accenttext); border-color:var(--np-accent); }
+  #nps-v2-design .np-choices { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+  #nps-v2-design .np-choice { text-align:left; border:1px solid var(--np-line); border-radius:8px; padding:14px 12px; color:var(--np-text); background:var(--np-bg); }
+  #nps-v2-design .np-choice[aria-pressed="true"] { border-color:var(--np-accent); background:var(--np-accentsoft); }
+  #nps-v2-design .np-choice span { display:block; font-size:13px; font-weight:500; margin-top:7px; }
+  #nps-v2-design .np-choice small { display:block; font-size:11px; color:var(--np-muted); margin-top:3px; }
+  #nps-v2-design .np-formgrid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+  #nps-v2-design .np-field { display:flex; flex-direction:column; gap:6px; font-size:12px; min-width:0; }
+  #nps-v2-design .np-field input,#nps-v2-design .np-field select { border:1px solid var(--np-line); border-radius:7px; background:var(--np-bg); padding:9px 10px; width:100%; min-width:0; color:var(--np-text); font-size:12px; }
+  #nps-v2-design .np-field small { color:var(--np-muted); font-size:11px; }
+  #nps-v2-design .np-span2 { grid-column:1/-1; }
+  #nps-v2-design .np-formactions { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:21px; }
+  #nps-v2-design .np-error { color:var(--np-bad); font-size:12px; background:var(--np-badbg); padding:9px 11px; border-radius:6px; margin-top:12px; }
+  #nps-v2-design .np-summary { display:grid; grid-template-columns:110px 1fr; gap:10px 14px; font-size:12px; margin:0; }
+  #nps-v2-design .np-summary dt { color:var(--np-muted); }
+  #nps-v2-design .np-summary dd { margin:0; overflow-wrap:anywhere; }
+  #nps-v2-design .np-notice { padding:11px 13px; border-radius:7px; background:var(--np-warnbg); color:var(--np-warn); font-size:12px; margin-top:18px; }
+  #nps-v2-design .np-log { display:flex; align-items:flex-start; gap:13px; padding:14px 0; border-bottom:1px solid var(--np-line); font-size:12px; }
+  #nps-v2-design .np-logtime { color:var(--np-muted); font-family:Consolas,monospace; font-size:11px; white-space:nowrap; }
+  #nps-v2-design .np-log p { color:var(--np-muted); font-size:11px; margin-top:3px; }
+  #nps-v2-design .np-setting { display:flex; justify-content:space-between; align-items:center; gap:20px; border-bottom:1px solid var(--np-line); padding:18px 0; font-size:13px; }
+  #nps-v2-design .np-setting small { display:block; color:var(--np-muted); font-size:12px; margin-top:4px; }
+  #nps-v2-design .np-setting input { accent-color:var(--np-accent); width:17px; height:17px; flex-shrink:0; }
+  #nps-v2-design .np-devicegrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+  #nps-v2-design .np-devicecard { border:1px solid var(--np-line); border-radius:9px; padding:18px; }
+  #nps-v2-design .np-devicecard h3 { font-size:14px; font-weight:500; margin:12px 0 4px; }
+  #nps-v2-design .np-devicecard p { font-size:12px; color:var(--np-muted); }
+  #nps-v2-design .np-devicecard .np-button { margin-top:16px; }
+  #nps-v2-design .np-devicecardtop { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  #nps-v2-design .np-adminidentity { display:flex; gap:8px; align-items:center; margin:0 6px 24px; padding:10px; border-radius:7px; color:var(--np-warn); background:var(--np-warnbg); font-size:12px; }
+  #nps-v2-design .np-bodycontent { min-width:0; }
+  #nps-v2-design .np-split { display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:18px; align-items:start; }
+  #nps-v2-design .np-split .np-panel { margin-top:0; padding:17px; }
+  #nps-v2-design .np-split .np-colendpoint { display:none; }
+  #nps-v2-design .np-split .np-choices,#nps-v2-design .np-split .np-formgrid { grid-template-columns:1fr; }
+  #nps-v2-design .np-split .np-steps { gap:10px; }
+  #nps-v2-design .np-split .np-step { font-size:11px; }
+  #nps-v2-design .np-split .np-choice { padding:10px; }
+  #nps-v2-design .np-split .np-choice span { display:inline; margin-left:6px; }
+  #nps-v2-design .np-split .np-choice small { margin-left:26px; }
+  #nps-v2-design .np-adminactions { display:flex; gap:4px; justify-content:flex-end; flex-wrap:wrap; }
+  #nps-v2-design .np-adminactions .np-button { font-size:11px; padding:5px 7px; }
+  #nps-v2-design .np-toast { position:absolute; left:50%; bottom:20px; transform:translateX(-50%); max-width:90%; padding:11px 17px; border:1px solid var(--np-line); border-radius:9px; background:var(--np-text); color:var(--np-bg); box-shadow:0 5px 20px #00000018; font-size:12px; z-index:5; }
+  #nps-v2-design .np-usage { display:flex; gap:24px; flex-wrap:wrap; padding:20px 0; border-bottom:1px solid var(--np-line); }
+  #nps-v2-design .np-usage strong { display:block; font-size:24px; font-weight:500; }
+  #nps-v2-design .np-usage span { display:block; color:var(--np-muted); font-size:12px; }
+  #nps-v2-design .np-track { margin-top:18px; height:6px; border-radius:5px; background:var(--np-line); overflow:hidden; }
+  #nps-v2-design .np-track > span { display:block; height:100%; background:var(--np-accent); }
+  @media(max-width:820px) { #nps-v2-design .np-shell { grid-template-columns:155px minmax(0,1fr); } #nps-v2-design .np-mainhead { padding:22px 19px 19px; } #nps-v2-design .np-body { padding:0 19px 22px; } #nps-v2-design .np-colendpoint { display:none; } #nps-v2-design .np-connection { padding:16px; } #nps-v2-design .np-connectionmeta { gap:15px; } #nps-v2-design .np-titleextra { display:none; } }
+  @media(max-width:580px) { #nps-v2-design .np-previewbar { padding-right:0; padding-top:42px; } #nps-v2-design .np-shell { display:flex; flex-direction:column; min-height:0; } #nps-v2-design .np-sidebar { border-right:0; border-bottom:1px solid var(--np-line); padding:12px; gap:0; } #nps-v2-design .np-brand,#nps-v2-design .np-navlabel,#nps-v2-design .np-sidebarbottom { display:none; } #nps-v2-design .np-accountlabel { margin-bottom:9px; max-width:230px; } #nps-v2-design .np-nav { flex-direction:row; flex-wrap:wrap; gap:3px; margin-bottom:0; } #nps-v2-design .np-nav button { padding:9px 8px; font-size:12px; } #nps-v2-design .np-nav button svg { display:none; } #nps-v2-design .np-navcount { margin-left:0; } #nps-v2-design .np-mainhead { padding:20px 14px; align-items:flex-start; } #nps-v2-design .np-pagetitle { font-size:20px; } #nps-v2-design .np-body { padding:0 14px 20px; } #nps-v2-design .np-connectiontop { gap:9px; } #nps-v2-design .np-connectiontop > .np-badge { margin-left:0; } #nps-v2-design .np-connectionmeta { gap:15px; } #nps-v2-design .np-connectionbottom { align-items:flex-start; } #nps-v2-design .np-row { gap:8px; flex-wrap:wrap; } #nps-v2-design .np-protocol { width:29px; height:29px; font-size:9px; } #nps-v2-design .np-row .np-badge { margin-left:37px; } #nps-v2-design .np-row .np-rowname { flex-basis:calc(100% - 40px); } #nps-v2-design .np-row .np-rowactions { margin-left:auto; } #nps-v2-design .np-footer { padding:10px 14px; flex-wrap:wrap; } #nps-v2-design .np-pagesub { max-width:180px; } #nps-v2-design .np-webtop { padding:13px 14px; } #nps-v2-design .np-stats { gap:19px; } #nps-v2-design .np-stat { gap:6px; } #nps-v2-design .np-stat strong { font-size:21px; } #nps-v2-design .np-search { flex:1; } #nps-v2-design .np-search input { width:100%; } #nps-v2-design .np-table td { padding:12px 4px; } #nps-v2-design .np-table th { padding:9px 4px; } #nps-v2-design .np-tableactions .np-copy { display:none; } #nps-v2-design .np-formgrid { grid-template-columns:1fr; } #nps-v2-design .np-choices { grid-template-columns:1fr; } #nps-v2-design .np-choice { padding:11px; } #nps-v2-design .np-choice span { display:inline; margin-left:8px; } #nps-v2-design .np-choice small { margin-left:28px; } #nps-v2-design .np-panel { padding:15px; } #nps-v2-design .np-steps { gap:11px; } #nps-v2-design .np-devicegrid { grid-template-columns:1fr; } #nps-v2-design .np-summary { grid-template-columns:76px 1fr; } }
+  @media(pointer:coarse) { #nps-v2-design button,#nps-v2-design .np-nav button,#nps-v2-design select { min-height:44px; } #nps-v2-design .np-iconbutton { width:44px; } #nps-v2-design input,#nps-v2-design .np-field input,#nps-v2-design .np-search input,#nps-v2-design .np-field select { font-size:16px; } }
+  @media(max-width:920px) { #nps-v2-design .np-split { grid-template-columns:1fr; } #nps-v2-design .np-admin .np-colquota { display:none; } }
+  @media(max-width:580px) { #nps-v2-design .np-previewtabs { flex-wrap:wrap; } #nps-v2-design .np-previewtabs button { padding:8px 9px; font-size:12px; } #nps-v2-design .np-adminidentity { margin:0 0 9px; width:fit-content; } #nps-v2-design .np-admin .np-tableactions { white-space:normal; } }
+  /* 保存本次评审选定的视觉参数；动态重绘后仍沿用同一组变量。 */
+  #nps-v2-design { --np-list-padding:10px; --np-panel-radius:11px; }
+  #nps-v2-design .np-row,#nps-v2-design .np-table td { padding-top:var(--np-list-padding); padding-bottom:var(--np-list-padding); }
+  #nps-v2-design .np-connection,#nps-v2-design .np-panel,#nps-v2-design .np-devicecard { border-radius:var(--np-panel-radius); }
+</style>
+<script>
+(() => {
+  // 所有状态只用于本地演示，不连接真实后端，也不读取系统账户信息。
+  const root = document.getElementById('nps-v2-design');
+  // 示例字段也先转义再插入 HTML，避免输入内容被解释为标签或脚本。
+  const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const icon = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
+  const samples = {
+    // 两组彼此独立的演示资源，用来评审切换账户时应清理哪些界面状态。
+    lin:{name:'林川',initial:'林',device:'我的 Windows 电脑',devices:[{name:'我的 Windows 电脑',platform:'Windows 11 · 当前设备',online:true},{name:'家庭 NAS',platform:'Linux · 最近在线 2 小时前',online:false}],tunnels:[
+      {id:'l1',name:'本地开发站点',protocol:'HTTP',target:'127.0.0.1:3000',endpoint:'dev.example.com',device:'我的 Windows 电脑',state:'active',version:3},
+      {id:'l2',name:'远程桌面',protocol:'TCP',target:'127.0.0.1:3389',endpoint:'edge.example.com:13389',device:'我的 Windows 电脑',state:'active',version:2},
+      {id:'l3',name:'NAS 管理页面',protocol:'HTTP',target:'192.168.1.10:5000',endpoint:'nas.example.com',device:'家庭 NAS',state:'pending',version:4},
+      {id:'l4',name:'SSH 终端',protocol:'TCP',target:'127.0.0.1:22',endpoint:'edge.example.com:10022',device:'我的 Windows 电脑',state:'paused',version:1}
+    ]},
+    chen:{name:'陈默',initial:'陈',device:'我的 MacBook',devices:[{name:'我的 MacBook',platform:'macOS · 当前设备',online:true}],tunnels:[{id:'c1',name:'作品集预览',protocol:'HTTP',target:'127.0.0.1:4321',endpoint:'portfolio.example.com',device:'我的 MacBook',state:'active',version:2}]}
+  };
+  // 集中管理当前视图、筛选和向导；重新渲染时不丢失已确认的交互状态。
+  const state={surface:'desktop',account:'lin',nav:{desktop:'overview',web:'tunnels',admin:'users'},query:'',filter:'all',panel:null,wizard:null,online:true,log:[],preferences:{autostart:true,background:true,notifications:false}};
+  const managedUsers=[{id:'u1',name:'林川',login:'linchuan',active:true,devices:2,tunnels:4,deviceQuota:5,tunnelQuota:20},{id:'u2',name:'陈默',login:'chenmo',active:true,devices:1,tunnels:1,deviceQuota:5,tunnelQuota:20},{id:'u3',name:'周宁',login:'zhouning',active:false,devices:0,tunnels:0,deviceQuota:3,tunnelQuota:10}];
+  const saved=window.openai?.widgetState;
+  // 对话内预览可恢复选择；离线网页没有宿主接口时直接使用默认值。
+  if(saved?.modelContent?.account && samples[saved.modelContent.account]) state.account=saved.modelContent.account;
+  if(['desktop','web','admin'].includes(saved?.modelContent?.surface)) state.surface=saved.modelContent.surface;
+  let toastTimer;
+  let returnFocus=null;
+  const account=()=>samples[state.account];
+  const current=()=>root.querySelector('.np-'+state.surface);
+  const body=()=>current().querySelector('.np-body');
+  const persist=()=>{const result=window.openai?.setWidgetState?.({modelContent:{surface:state.surface,account:state.account,view:state.nav[state.surface]},privateContent:{preferences:state.preferences}});result?.catch?.(()=>{});};
+  // 图标库由外层页面或对话宿主提供，产品逻辑不从网络加载依赖。
+  const icons=()=>globalThis.lucide?.createIcons?.({attrs:{width:16,height:16}});
+  function toast(message){const el=root.querySelector('.np-toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,3600);}
+  // 用户期望状态与设备在线状态分开计算，保存成功不能直接显示为运行中。
+  const status = tunnel => {if(tunnel.state==='paused')return ['已暂停','np-neutral'];if(!state.online||tunnel.state==='pending')return ['待设备上线','np-warn'];if(tunnel.state==='applying')return ['应用中','np-warn'];return ['运行中','np-good'];};
+  const badge=t=>{const [label,cls]=status(t);return `<span class="np-badge ${cls}">${t.state==='active'&&state.online?'● ':''}${label}</span>`;};
+  function stats(){const ts=account().tunnels;return `<div class="np-stats"><div class="np-stat"><strong>${ts.length}</strong>全部隧道</div><div class="np-stat"><strong>${ts.filter(t=>status(t)[0]==='运行中').length}</strong>运行中</div><div class="np-stat"><strong>${ts.filter(t=>['待设备上线','应用中'].includes(status(t)[0])).length}</strong>待处理</div></div>`;}
+  function tools(){return `<div class="np-tools"><label class="np-search">${icon('search')}<input class="np-searchinput" aria-label="搜索隧道" placeholder="搜索名称、入口或目标" value="${escape(state.query)}"></label><select class="np-select np-filter" aria-label="按状态筛选"><option value="all">全部状态</option><option value="active">运行中</option><option value="pending">待设备上线</option><option value="paused">已暂停</option></select></div>`;}
+  // 筛选使用清单实际展示的状态，避免设备离线后筛选结果与状态标签矛盾。
+  function filtered(){return account().tunnels.filter(t=>{const q=state.query.toLowerCase();const matchesStatus=state.filter==='all'||(state.filter==='active'?status(t)[0]==='运行中':state.filter==='pending'?status(t)[0]==='待设备上线':t.state===state.filter);return (!q||[t.name,t.target,t.endpoint].some(v=>v.toLowerCase().includes(q)))&&matchesStatus;});}
+  function tunnelList(compact=false){const ts=filtered();if(!ts.length)return '<div class="np-empty">没有找到隧道，请调整搜索或新建一条。</div>';if(compact)return ts.map(t=>`<div class="np-row"><span class="np-protocol">${escape(t.protocol)}</span><div class="np-rowname"><strong><button class="np-tabletitle" type="button" data-detail="${t.id}">${escape(t.name)}</button></strong><small>${escape(t.endpoint)} → ${escape(t.target)}</small></div>${badge(t)}<span class="np-rowactions"><button class="np-iconbutton" type="button" data-copy="${t.id}" aria-label="复制${escape(t.name)}的访问地址">${icon('copy')}</button><button class="np-iconbutton" type="button" data-toggle="${t.id}" aria-label="${t.state==='paused'?'启用':'暂停'}${escape(t.name)}">${icon(t.state==='paused'?'play':'pause')}</button></span></div>`).join('');return `<table class="np-table"><thead><tr><th scope="col">名称 / 设备</th><th scope="col">状态</th><th class="np-colendpoint" scope="col">公开入口</th><th scope="col" class="np-tableactions">操作</th></tr></thead><tbody>${ts.map(t=>`<tr><td><button class="np-tabletitle" type="button" data-detail="${t.id}">${escape(t.name)}</button><span class="np-tablesub">${escape(t.protocol)} · ${escape(t.device)}</span></td><td>${badge(t)}</td><td class="np-colendpoint"><span class="np-endpoint">${escape(t.endpoint)}</span><span class="np-tablesub">→ ${escape(t.target)}</span></td><td class="np-tableactions"><button type="button" class="np-iconbutton np-copy" data-copy="${t.id}" aria-label="复制${escape(t.name)}的访问地址">${icon('copy')}</button><button type="button" class="np-iconbutton" data-toggle="${t.id}" aria-label="${t.state==='paused'?'启用':'暂停'}${escape(t.name)}">${icon(t.state==='paused'?'play':'pause')}</button><button type="button" class="np-iconbutton" data-detail="${t.id}" aria-label="查看${escape(t.name)}详情">${icon('chevron-right')}</button></td></tr>`).join('')}</tbody></table><div class="np-countline">显示 ${ts.length} 条 · 所有配置仅属于${escape(account().name)}的个人空间</div>`;}
+  function overview(){return `<section class="np-connection" aria-label="当前设备连接"><div class="np-connectiontop"><div class="np-deviceicon">${icon(account().device.includes('Mac')?'laptop':'monitor')}</div><div><h3>${state.online?'此设备已连接':'此设备已断开'}</h3><p>${escape(account().device)} · edge.example.com</p></div><span class="np-badge ${state.online?'np-good':'np-warn'}">${state.online?'● 连接正常':'连接已暂停'}</span></div><div class="np-connectionbottom"><div class="np-connectionmeta"><span><small>当前传输</small>TLS / TCP</span><span><small>设备状态</small>${state.online?'在线':'离线'}</span><span><small>当前设备隧道</small>${account().tunnels.filter(t=>t.device===account().device).length} 条</span></div><button type="button" class="np-button" data-action="connection">${icon(state.online?'pause':'play')}${state.online?'暂停连接':'恢复连接'}</button></div></section><div class="np-sectionhead"><h3>我的隧道</h3><button type="button" class="np-button np-ghost" data-action="all">查看全部 ${icon('arrow-up-right')}</button></div><div class="np-listarea">${tunnelList(true)}</div><div class="np-hint">${icon('info')}<span>配置已保存不代表已经生效。离线设备上线后，将自动应用最新版本。</span></div>`;}
+  function logs(){return `<div class="np-sectionhead"><h3>${state.surface==='desktop'?'连接诊断':'活动记录'}</h3><button type="button" class="np-button" data-action="diagnose">${icon('scan-line')}运行诊断</button></div><div class="np-loglist">${[...state.log.map(text=>['刚刚',text,'本次原型操作']),['10:42:08','配置已应用','本地开发站点 · 配置版本 v3'],['10:41:56','设备连接成功',account().device+' · 已完成身份验证'],['10:41:55','连接服务启动','已从本地配置恢复当前设备']].map(([time,title,sub])=>`<div class="np-log"><span class="np-logtime">${time}</span><div><span>${escape(title)}</span><p>${escape(sub)}</p></div></div>`).join('')}</div><div class="np-hint">${icon('lock-keyhole')}<span>仅显示本账户活动；设备密钥和登录令牌不会出现在日志中。</span></div>`;}
+  function settings(){if(state.surface==='web')return `<div class="np-sectionhead"><h3>登录与安全</h3><span>${escape(account().name)}的个人账户</span></div><div class="np-setting"><div>登录密码<small>密码与设备连接凭据分别管理</small></div><button class="np-button" type="button" data-action="password">修改密码</button></div><div class="np-setting"><div>已登录的设备<small>撤销登录会话不会自动解除后台设备登记</small></div><button class="np-button" type="button" data-action="sessions">查看会话</button></div><div class="np-setting"><div>设备连接凭据<small>解除设备将同时停止它的公开隧道</small></div><button class="np-button" type="button" data-action="devices">管理设备</button></div>`;return `<div class="np-sectionhead"><h3>启动与后台</h3><span>本机偏好</span></div>${[['autostart','登录系统时自动启动','系统登录后启动后台连接服务'],['background','关闭窗口后继续连接','退出界面，不中断正在运行的隧道'],['notifications','连接异常时提醒','只在需要处理的问题出现时通知']].map(([key,label,sub])=>`<label class="np-setting"><span>${label}<small>${sub}</small></span><input type="checkbox" data-preference="${key}" ${state.preferences[key]?'checked':''}></label>`).join('')}<div class="np-hint">${icon('info')}<span>这里的开关仅演示偏好设置，不会修改你的系统。</span></div>`;}
+  function devices(){return `<div class="np-sectionhead"><h3>我的设备</h3><button type="button" class="np-button" data-action="enroll">${icon('plus')}接入设备</button></div><div class="np-devicegrid">${account().devices.map(d=>`<article class="np-devicecard"><div class="np-devicecardtop">${icon(d.platform.includes('macOS')?'laptop':'monitor')}<span class="np-badge ${d.online?'np-good':'np-neutral'}">${d.online?'在线':'离线'}</span></div><h3>${escape(d.name)}</h3><p>${escape(d.platform)}</p><button type="button" class="np-button" data-device="${escape(d.name)}">查看关联隧道 ${icon('arrow-right')}</button></article>`).join('')}</div><div class="np-hint">${icon('key-round')}<span>每台设备使用独立连接凭据，可单独撤销，无需修改账户密码。</span></div>`;}
+  function usage(){const v=state.account==='lin'?12.8:2.4;return `<div class="np-sectionhead"><h3>本月用量</h3><span>示例周期 · 11 月 1 日至 30 日</span></div><div class="np-usage"><div><strong>${v} GB</strong><span>已使用流量 / 100 GB</span></div><div><strong>${account().devices.length} / 5</strong><span>设备数量</span></div><div><strong>${account().tunnels.length} / 20</strong><span>隧道数量</span></div></div><div class="np-track" role="progressbar" aria-label="月流量已使用比例" aria-valuenow="${v}" aria-valuemin="0" aria-valuemax="100"><span style="width:${v}%"></span></div><div class="np-hint">${icon('info')}<span>到达限额前提示；被限额暂停时显示具体原因和恢复条件。</span></div>`;}
+  // 关闭面板后恢复到可操作控件，保留键盘使用者的操作上下文。
+  function closePanel(){state.panel=null;state.wizard=null;render();if(returnFocus?.isConnected)returnFocus.focus();else (current().querySelector('[data-action="new"]:not([hidden])')||current().querySelector('button')).focus();}
+  function renderPanel(){if(state.wizard)return wizardMarkup();if(!state.panel)return '';if(state.panel.kind==='detail'){const t=account().tunnels.find(t=>t.id===state.panel.id);if(!t)return '';return `<section class="np-panel" aria-label="隧道详情"><div class="np-panelhead"><div><h3>${escape(t.name)}</h3><p>配置版本 v${t.version} · ${status(t)[0]}</p></div><button type="button" class="np-iconbutton" data-action="closepanel" aria-label="关闭隧道详情">${icon('x')}</button></div><dl class="np-summary"><dt>公开入口</dt><dd>${escape(t.endpoint)}</dd><dt>本地目标</dt><dd>${escape(t.target)}</dd><dt>所属设备</dt><dd>${escape(t.device)}</dd><dt>传输协议</dt><dd>${escape(t.protocol)}</dd><dt>配置状态</dt><dd>${t.state==='pending'?'已保存，等待设备上线':t.state==='paused'?'用户已暂停':t.state==='applying'?'等待设备确认应用':'设备已确认应用'}</dd></dl><div class="np-formactions"><button type="button" class="np-button" data-copy="${t.id}">${icon('copy')}复制入口</button><button type="button" class="np-button" data-action="diagnose">${icon('scan-line')}诊断连接</button></div></section>`;}return `<section class="np-panel" aria-label="操作信息"><div class="np-panelhead"><div><h3>${escape(state.panel.title)}</h3><p>${escape(state.panel.subtitle||'')}</p></div><button type="button" class="np-iconbutton" data-action="closepanel" aria-label="关闭信息">${icon('x')}</button></div>${state.panel.content}</section>`;}
+  const scenarios=[['HTTP','网站预览','HTTP / HTTPS','globe'],['TCP','端口转发','TCP · SSH · 远程桌面','cable'],['UDP','数据转发','UDP · DNS · 游戏服务','radio']];
+  // 新建流程分为用途、参数、确认三步；离线设备也可以保存待应用配置。
+  function wizardMarkup(){const w=state.wizard;return `<section class="np-panel np-wizard" aria-label="新建隧道向导"><div class="np-panelhead"><div><h3>新建隧道</h3><p>从使用场景开始，逐步完成配置。</p></div><button type="button" class="np-iconbutton" data-action="closepanel" aria-label="取消新建隧道">${icon('x')}</button></div><div class="np-steps">${['选择用途','配置连接','检查并应用'].map((label,i)=>`<span class="np-step ${w.step===i?'np-current':''}" ${w.step===i?'aria-current="step"':''}><b>${i+1}</b>${label}</span>`).join('')}</div>${w.step===0?`<div class="np-choices">${scenarios.map(([p,n,d,i])=>`<button type="button" class="np-choice" data-scenario="${p}" aria-pressed="${w.protocol===p}">${icon(i)}<span>${n}</span><small>${d}</small></button>`).join('')}</div>`:w.step===1?`<form class="np-formgrid" onsubmit="return false"><label class="np-field">隧道名称<input name="name" required maxlength="60" value="${escape(w.name)}" placeholder="例如：我的开发站点"></label><label class="np-field">所属设备<select name="device">${account().devices.map(d=>`<option value="${escape(d.name)}" ${w.device===d.name?'selected':''}>${escape(d.name)}${d.online?'':'（离线）'}</option>`).join('')}</select></label><label class="np-field">本地服务地址<input name="target" required value="${escape(w.target)}" placeholder="127.0.0.1:3000"><small>填写设备能访问的地址及端口。</small></label><label class="np-field">${w.protocol==='HTTP'?'公开域名':'公开端口'}<input name="entry" required value="${escape(w.entry)}" placeholder="${w.protocol==='HTTP'?'demo.example.com':'10080'}"><small>${w.protocol==='HTTP'?'使用已指向服务器的域名。':'服务端范围内未被占用的端口。'}</small></label></form>`:`<dl class="np-summary"><dt>隧道名称</dt><dd>${escape(w.name)}</dd><dt>协议 / 设备</dt><dd>${escape(w.protocol)} · ${escape(w.device)}</dd><dt>本地目标</dt><dd>${escape(w.target)}</dd><dt>公开入口</dt><dd>${escape(w.protocol==='HTTP'?w.entry:'edge.example.com:'+w.entry)}</dd></dl><div class="np-notice">${account().devices.find(d=>d.name===w.device)?.online&&state.online?'保存后将向设备下发配置，并等待应用回执。':'当前设备离线：配置会先保存，设备上线后再应用。'}</div>`}<div class="np-error" role="alert" hidden></div><div class="np-formactions"><button type="button" class="np-button" data-action="${w.step===0?'closepanel':'wizardback'}">${w.step===0?'取消':'上一步'}</button><button type="button" class="np-button np-primary" data-action="${w.step===2?'wizardsave':'wizardnext'}">${w.step===2?'保存并应用':'下一步'} ${icon(w.step===2?'check':'arrow-right')}</button></div></section>`;}
+  function adminContent(nav){
+    // 这里仅生成管理元数据；真正的管理授权由后端执行，不能依赖隐藏按钮。
+    if(nav==='policies')return '<div class="np-sectionhead"><h3>公开入口授权</h3><span>示例策略</span></div><dl class="np-summary"><dt>可申请端口</dt><dd>10000–19999</dd><dt>平台域名</dt><dd>账户独立子域空间 · *.example.com</dd><dt>自定义域名</dt><dd>验证控制权后启用</dd><dt>监听地址</dt><dd>由管理员指定，用户不可覆盖</dd></dl><div class="np-hint">'+icon('shield-check')+'<span>入口按授权范围分配；全局唯一约束防止冲突。</span></div>';
+    if(nav==='system')return '<div class="np-sectionhead"><h3>服务运行情况</h3><span class="np-badge np-good">运行正常</span></div><div class="np-log"><span class="np-badge np-good">正常</span><span>管理入口与设备连接服务</span></div><div class="np-log"><span class="np-badge np-good">正常</span><span>配置任务队列 · 无待处理异常</span></div><div class="np-log"><span class="np-badge np-neutral">最近备份</span><span>今天 03:00 · 示例备份记录</span></div><div class="np-hint">'+icon('lock-keyhole')+'<span>这里显示平台健康状态，不展示用户的连接目标和日志。</span></div>';
+    return `<div class="np-stats"><div class="np-stat"><strong>${managedUsers.length}</strong>个人账户</div><div class="np-stat"><strong>${managedUsers.filter(u=>u.active).length}</strong>正常</div><div class="np-stat"><strong>${managedUsers.filter(u=>!u.active).length}</strong>已停用</div></div><table class="np-table"><thead><tr><th scope="col">账户</th><th scope="col">状态</th><th scope="col" class="np-colquota">设备 / 隧道</th><th scope="col" class="np-tableactions">管理操作</th></tr></thead><tbody>${managedUsers.map(u=>`<tr><td>${escape(u.name)}<span class="np-tablesub">${escape(u.login)}</span></td><td><span class="np-badge ${u.active?'np-good':'np-neutral'}">${u.active?'正常':'已停用'}</span></td><td class="np-colquota"><span>${u.devices} / ${u.deviceQuota} 台设备</span><span class="np-tablesub">${u.tunnels} / ${u.tunnelQuota} 条隧道</span></td><td><div class="np-adminactions"><button type="button" class="np-button" data-quota="${u.id}">配额</button><button type="button" class="np-button np-ghost" data-user-state="${u.id}">${u.active?'停用':'启用'}</button></div></td></tr>`).join('')}</tbody></table><div class="np-hint">${icon('shield-check')}<span>管理员可管理状态与额度；默认不读取用户的设备配置、目标地址和密钥。</span></div>`;
+  }
+  function render(){
+    // 单一渲染入口，让主导航、清单、面板和账户头像始终使用相同上下文。
+    for(const surface of ['desktop','web','admin']) root.querySelector('.np-'+surface).hidden=state.surface!==surface;
+    root.querySelectorAll('button[data-surface]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.surface===state.surface));
+    root.querySelectorAll('.np-account').forEach(s=>s.value=state.account);
+    root.querySelector('.np-desktop').classList.toggle('np-mac',account().device.includes('Mac'));
+    root.querySelectorAll('.np-avatar').forEach(el=>el.textContent=account().initial);
+    root.querySelectorAll('.np-navcount').forEach(el=>el.textContent=account().tunnels.length);
+    root.querySelectorAll('.np-app').forEach(app=>app.querySelectorAll('[data-nav]').forEach(b=>{const surface=app.classList.contains('np-admin')?'admin':app.classList.contains('np-web')?'web':'desktop';const selected=b.dataset.nav===state.nav[surface];b.classList.toggle('np-selected',selected);if(selected)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');}));
+    const nav=state.nav[state.surface];
+    const titles={overview:state.surface==='desktop'?'连接概览':'概览',tunnels:state.surface==='desktop'?'我的隧道':'隧道',devices:'设备',usage:'用量',logs:state.surface==='desktop'?'诊断与日志':'活动记录',settings:state.surface==='desktop'?'偏好设置':'账户安全',users:'用户管理',policies:'入口策略',system:'服务状态'};
+    current().querySelector('.np-pagetitle').textContent=titles[nav];
+    const bc=current().querySelector('.np-breadcrumb');if(bc)bc.textContent=titles[nav];
+    const sub=current().querySelector('.np-pagesub');if(sub)sub.textContent=state.surface==='admin'?'管理账户状态和额度，用户配置保持独立。':nav==='tunnels'?'把本地服务连接到外部，配置与运行状态一目了然。':nav==='devices'?'每台设备独立登记，连接凭据可以单独撤销。':'当前账户的连接、配置与活动。';
+    const newButton=current().querySelector('[data-action="new"]');if(newButton)newButton.hidden=!['overview','tunnels'].includes(nav);
+    const html=state.surface==='admin'?adminContent(nav):nav==='overview'?overview():nav==='tunnels'?`${stats()}${tools()}<div class="np-listarea">${tunnelList(state.surface==='desktop')}</div>`:nav==='devices'?devices():nav==='usage'?usage():nav==='settings'?settings():logs();
+    const panel=renderPanel();body().classList.toggle('np-split',state.surface==='web'&&!!panel);
+    body().innerHTML=`<div class="np-bodycontent">${html}</div>${panel}`;
+    const filter=body().querySelector('.np-filter');if(filter)filter.value=state.filter;
+    root.querySelectorAll('.np-footerstate').forEach(el=>el.textContent=state.online?'后台服务运行中':'后台服务已暂停连接');
+    icons();
+  }
+  function refreshList(){body().querySelector('.np-listarea').innerHTML=tunnelList(state.surface==='desktop');icons();}
+  // 前后切换向导步骤前先收集输入，不因页面重绘清空用户已填写的数据。
+  function rememberForm(){const w=state.wizard;if(w?.step===1)for(const field of ['name','device','target','entry']){const input=body().querySelector(`[name="${field}"]`);if(input)w[field]=input.value.trim();}}
+  // 本地校验只改善交互；正式版本还必须由服务端检查归属、配额与全局入口占用。
+  function validate(){const w=state.wizard;if(!w.name)return '请填写一个容易辨认的隧道名称。';if(!/^([a-zA-Z0-9.-]+|\[[0-9a-fA-F:]+\]):\d+$/.test(w.target))return '本地地址格式不正确，例如 127.0.0.1:3000。';const port=Number(w.target.slice(w.target.lastIndexOf(':')+1));if(port<1||port>65535)return '本地端口必须在 1–65535 之间。';if(w.protocol==='HTTP'&&!/^(?=.{1,253}$)([a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/.test(w.entry))return '请填写完整域名，例如 demo.example.com，不包含 https://。';if(w.protocol!=='HTTP'&&(!/^\d+$/.test(w.entry)||Number(w.entry)<1024||Number(w.entry)>65535))return '此示例的公开端口范围为 1024–65535。';const endpoint=w.protocol==='HTTP'?w.entry:'edge.example.com:'+w.entry;if(Object.values(samples).some(a=>a.tunnels.some(t=>t.endpoint===endpoint)))return '此公开入口已被占用，请换一个域名或端口。';return '';}
+  function openInfo(title,content,subtitle=''){state.wizard=null;state.panel={kind:'info',title,content,subtitle};render();}
+  function diagnose(){openInfo('连接诊断',`<div class="np-log"><span class="np-badge np-good">通过</span><span>服务端可访问 · TLS 身份验证正常</span></div><div class="np-log"><span class="np-badge ${state.online?'np-good':'np-warn'}">${state.online?'通过':'待恢复'}</span><span>${state.online?'当前设备在线 · 配置通道正常':'设备连接已暂停，请先恢复连接'}</span></div><div class="np-log"><span class="np-badge np-neutral">说明</span><span>本地服务、DNS 与端口检测将在真实客户端执行。</span></div>`,'示例诊断结果，不代表实际网络检测');state.log.unshift('运行连接诊断');}
+  root.addEventListener('click',e=>{
+    // 管理操作先校验额度/展示停用影响，再更新演示数据，避免无确认的危险操作。
+    const b=e.target.closest('button');if(!b||state.surface!=='admin')return;
+    if(b.dataset.quota){const u=managedUsers.find(u=>u.id===b.dataset.quota);openInfo('调整 '+u.name+' 的配额',`<div class="np-formgrid"><label class="np-field">设备上限<input name="deviceQuota" type="number" min="1" max="100" value="${u.deviceQuota}"></label><label class="np-field">隧道上限<input name="tunnelQuota" type="number" min="1" max="500" value="${u.tunnelQuota}"></label></div><div class="np-error" role="alert" hidden></div><div class="np-formactions"><span class="np-muted">调整会记录管理审计</span><button type="button" class="np-button np-primary" data-save-quota="${u.id}">保存配额</button></div>`,'新的上限不能低于当前资源数量');}
+    if(b.dataset.saveQuota){const u=managedUsers.find(u=>u.id===b.dataset.saveQuota);const devices=Number(body().querySelector('[name="deviceQuota"]').value);const tunnels=Number(body().querySelector('[name="tunnelQuota"]').value);if(!Number.isInteger(devices)||!Number.isInteger(tunnels)||devices<Math.max(1,u.devices)||devices>100||tunnels<Math.max(1,u.tunnels)||tunnels>500){const err=body().querySelector('.np-error');err.textContent='请填写有效整数，且不能小于当前使用数量。';err.hidden=false;return;}u.deviceQuota=devices;u.tunnelQuota=tunnels;state.panel=null;render();toast('示例配额已保存，管理操作已记录');}
+    if(b.dataset.userState){const u=managedUsers.find(u=>u.id===b.dataset.userState);openInfo((u.active?'停用':'启用')+'账户：'+u.name,`<p>${u.active?`将撤销登录与连接权限，并停止该账户的 ${u.devices} 台设备及 ${u.tunnels} 条隧道。`:'将恢复此账户的登录与设备连接权限，设备重新连接后恢复配置。'}</p><div class="np-formactions"><button type="button" class="np-button" data-action="closepanel">取消</button><button type="button" class="np-button np-primary" data-confirm-user="${u.id}">确认${u.active?'停用':'启用'}</button></div>`,'确认前请核对受影响范围；此处仅为交互示例');}
+    if(b.dataset.confirmUser){const u=managedUsers.find(u=>u.id===b.dataset.confirmUser);u.active=!u.active;state.panel=null;render();toast('账户状态已更新（示例）');}
+  });
+  root.addEventListener('input',e=>{if(e.target.classList.contains('np-searchinput')){state.query=e.target.value;refreshList();}});
+  // 切换示例账户时清空旧账户的筛选、面板、向导和临时日志，不能复用旧上下文。
+  root.addEventListener('change',e=>{if(e.target.classList.contains('np-account')){state.account=e.target.value;state.query='';state.filter='all';state.panel=null;state.wizard=null;state.online=true;state.log=[];render();persist();toast('已切换示例账户，列表与设备上下文已更新');}if(e.target.classList.contains('np-filter')){state.filter=e.target.value;refreshList();}if(e.target.dataset.preference){state.preferences[e.target.dataset.preference]=e.target.checked;persist();toast('示例偏好已更新，不影响系统设置');}});
+  root.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.surface){state.surface=b.dataset.surface;state.panel=null;state.wizard=null;state.query='';state.filter='all';render();persist();return;}if(b.dataset.nav){state.nav[state.surface]=b.dataset.nav;state.panel=null;state.wizard=null;state.query='';state.filter='all';render();persist();return;}if(b.dataset.scenario){state.wizard.protocol=b.dataset.scenario;state.wizard.target=b.dataset.scenario==='HTTP'?'127.0.0.1:3000':b.dataset.scenario==='TCP'?'127.0.0.1:8080':'127.0.0.1:5353';state.wizard.entry=b.dataset.scenario==='HTTP'?'':'10080';render();return;}if(b.dataset.copy){const t=account().tunnels.find(t=>t.id===b.dataset.copy);const value=t.protocol==='HTTP'?'https://'+t.endpoint:t.endpoint;try{await navigator.clipboard.writeText(value);toast('访问地址已复制');}catch{openInfo('访问地址',`<label class="np-field">可手动复制<input readonly value="${escape(value)}" aria-label="访问地址"></label>`,'复制不可用时，可以选中下方地址');const input=body().querySelector('input');input.focus();input.select();}return;}if(b.dataset.detail){returnFocus=b;state.wizard=null;state.panel={kind:'detail',id:b.dataset.detail};render();body().querySelector('[data-action="closepanel"]').focus();return;}if(b.dataset.toggle){const t=account().tunnels.find(t=>t.id===b.dataset.toggle);const isPause=t.state!=='paused';t.state=isPause?'paused':(state.online&&account().devices.find(d=>d.name===t.device)?.online?'active':'pending');t.version++;state.log.unshift(`${isPause?'暂停':'启用'}隧道：${t.name}`);render();toast(isPause?'隧道已暂停（示例）':'启用配置已更新（示例）');return;}if(b.dataset.device){state.nav[state.surface]='tunnels';state.query=b.dataset.device;state.query='';state.filter='all';state.panel={kind:'info',title:b.dataset.device,subtitle:'关联隧道',content:account().tunnels.filter(t=>t.device===b.dataset.device).map(t=>`<div class="np-log"><span>${escape(t.name)}</span>${badge(t)}</div>`).join('')||'<p>此设备尚无隧道。</p>'};render();return;}const action=b.dataset.action;if(!action)return;returnFocus=b;
+    if(action==='new'){state.panel=null;state.wizard={step:0,protocol:'HTTP',name:'',device:account().device,target:'127.0.0.1:3000',entry:''};render();body().querySelector('[data-scenario="HTTP"]').focus();}
+    if(action==='closepanel')closePanel();
+    if(action==='all'){state.nav[state.surface]='tunnels';render();}
+    if(action==='connection'){state.online=!state.online;render();toast(state.online?'设备连接已恢复（示例）':'设备连接已暂停（示例）');}
+    if(action==='server')openInfo('我的服务器','<dl class="np-summary"><dt>服务端</dt><dd>edge.example.com:8024</dd><dt>管理入口</dt><dd>https://console.example.com</dd><dt>传输方式</dt><dd>TLS / TCP</dd></dl>','服务器连接参数示例');
+    if(action==='wizardback'){rememberForm();state.wizard.step--;render();}
+    if(action==='wizardnext'){rememberForm();const err=state.wizard.step===1?validate():'';if(err){const el=body().querySelector('.np-error');el.textContent=err;el.hidden=false;return;}state.wizard.step++;render();if(state.wizard.step===1)body().querySelector('[name="name"]').focus();}
+    // 延迟只模拟设备回执；回调必须核对所属账户，不能在切换后刷新另一账户界面。
+    if(action==='wizardsave'){const w=state.wizard;const online=state.online&&account().devices.find(d=>d.name===w.device)?.online;const t={id:'new-'+Date.now(),name:w.name,protocol:w.protocol,target:w.target,endpoint:w.protocol==='HTTP'?w.entry:'edge.example.com:'+w.entry,device:w.device,state:online?'applying':'pending',version:1};const owner=account();owner.tunnels.unshift(t);state.wizard=null;state.panel={kind:'detail',id:t.id};state.nav[state.surface]='tunnels';state.query='';state.filter='all';state.log.unshift('创建隧道：'+t.name);render();toast(online?'配置已保存，正在模拟设备应用':'配置已保存，等待设备上线');if(online)setTimeout(()=>{if(t.state==='applying'){t.state='active';if(account()===owner){render();toast('设备已确认应用 v1（示例）');}}},1200);}
+    if(action==='diagnose')diagnose();
+    if(action==='devices'){state.nav[state.surface]='devices';render();}
+    if(action==='enroll')openInfo('接入新设备','<ol><li>在 Windows、macOS 或 Linux 上安装客户端。</li><li>在客户端中使用系统浏览器登录当前账户。</li><li>确认设备名称后完成登记。</li></ol><div class="np-notice">设备使用独立凭据连接。这里只演示接入步骤，不生成真实登记码。</div>','一个账户可以管理多台设备');
+    if(action==='password')openInfo('修改密码','<p>正式版本在验证当前密码或完成身份确认后修改密码，并提供撤销其他会话的选项。</p>','此原型不收集真实密码');
+    if(action==='sessions')openInfo('登录会话','<div class="np-log"><span class="np-badge np-good">当前会话</span><span>本机浏览器 · 刚刚活动</span></div><div class="np-hint">此处仅展示示例会话，不读取实际登录信息。</div>');
+  });
+  // Esc 与关闭按钮使用同一清理逻辑，保证键盘路径和鼠标路径行为一致。
+  root.addEventListener('keydown',e=>{if(e.key==='Escape'&&(state.panel||state.wizard))closePanel();});
+  window.addEventListener('openai:set_globals',e=>{const savedState=e.detail?.globals?.widgetState?.modelContent;if(samples[savedState?.account])state.account=savedState.account;if(['desktop','web','admin'].includes(savedState?.surface))state.surface=savedState.surface;if(savedState){state.panel=null;state.wizard=null;state.query='';state.filter='all';render();}});
+  render();
+  // 对话宿主可选的设计调节器；离线预览没有该对象时不影响任何产品交互。
+  if(globalThis.Tweak){const design={density:10,radius:11};const update=()=>{root.style.setProperty('--np-list-padding',design.density+'px');root.style.setProperty('--np-panel-radius',design.radius+'px');};const tweak=new Tweak({container:root,onChange:update});tweak.addSlider(design,'density',{label:'列表疏密',min:10,max:20,unit:'px'});tweak.addSlider(design,'radius',{label:'面板圆角',min:6,max:14,unit:'px'});}
+})();
+</script>
